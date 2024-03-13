@@ -105,7 +105,7 @@ public class PlayerController : MonoBehaviour
 
     private void Jump()
     {
-        Debug.Log("跳跃！！");
+        //Debug.Log("跳跃！！");
         //跳跃逻辑
 
         p_rigidbody.velocity = new Vector2(p_rigidbody.velocity.x, 0f);
@@ -128,6 +128,16 @@ public class PlayerController : MonoBehaviour
 
             isDead = true;
             Time.timeScale = 0;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.transform.tag == "Avaliable")
+        {
+            //每一种可获取方块可能都会有不同的效果
+            //因此需要调用方块的效果方法
+            collision.transform.GetComponent<AvailableBlock>().GetEffect();
         }
     }
 }
