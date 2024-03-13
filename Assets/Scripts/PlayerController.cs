@@ -137,6 +137,9 @@ public class PlayerController : MonoBehaviour
         {
             //每一种可获取方块可能都会有不同的效果
             //因此需要调用方块的效果方法
+            //TODO:此处可能需要单例来支持对游戏底层的数据获取
+
+            
             collision.transform.GetComponent<AvailableBlock>().GetEffect();
         }
     }

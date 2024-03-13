@@ -19,6 +19,12 @@ public class AvailableBlock : MonoBehaviour
     public void GetEffect()
     {
         Debug.Log("获取效果!!");
+
+        //TODO:将方块功能抽象成接口，在此调用不同方法
+        #region 添加方块基础功能
+        GameObject.Find("Controller").GetComponent<GameController>().ChangeBlockCount(2);
+        #endregion 
+
         gameObject.SetActive(false);
     }
 }
