@@ -46,6 +46,6 @@ public class GameController : MonoBehaviour
             BlockCurrentCount = BlockCurrentCount + count;
 
         //TODO:需要更改为单例调用
-        GameObject.Find("Canvas").GetComponent<UIManager>().RefreshBlockCount(BlockCurrentCount);
+        GameObject.Find("Canvas").GetComponent<GameUIManager>().RefreshBlockCount(BlockCurrentCount);
     }
 }

@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
         if(isDead == true)
         {
             isDead = false;
-            SceneManager.LoadScene(0);
+            SceneControlller.Instance.LoadScene("Menu");
             Time.timeScale = 1;
             return;
         }
